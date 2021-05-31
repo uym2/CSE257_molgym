@@ -1,4 +1,5 @@
-# This is my clone of the MolGym software. I mostly used the software as is in my CSE257 final project. I only added the scripts to run it, so all of the .sh files are mine.
+# This is my clone of the MolGym software. 
+I mainly just used the software as is in my CSE257 final project. I only added the scripts to run it, so all of the .sh files are mine.
 
 # MolGym: Reinforcement Learning for 3D Molecular Design
 
