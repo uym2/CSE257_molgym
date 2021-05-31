@@ -1,0 +1,116 @@
+usage: run.py [-h] --name NAME [--seed SEED] [--log_dir LOG_DIR]
+              [--model_dir MODEL_DIR] [--data_dir DATA_DIR]
+              [--results_dir RESULTS_DIR] [--device {cpu,cuda}]
+              [--canvas_size CANVAS_SIZE] [--symbols SYMBOLS] --formulas
+              FORMULAS [--eval_formulas EVAL_FORMULAS] --bag_scale BAG_SCALE
+              [--min_atomic_distance MIN_ATOMIC_DISTANCE]
+              [--max_solo_distance MAX_SOLO_DISTANCE]
+              [--min_reward MIN_REWARD] [--model {internal,covariant}]
+              [--min_mean_distance MIN_MEAN_DISTANCE]
+              [--max_mean_distance MAX_MEAN_DISTANCE]
+              [--network_width NETWORK_WIDTH] [--maxl MAXL]
+              [--num_cg_levels NUM_CG_LEVELS]
+              [--num_channels_hidden NUM_CHANNELS_HIDDEN]
+              [--num_channels_per_element NUM_CHANNELS_PER_ELEMENT]
+              [--num_gaussians NUM_GAUSSIANS] [--beta BETA] [--load_latest]
+              [--load_model LOAD_MODEL] [--save_freq SAVE_FREQ]
+              [--eval_freq EVAL_FREQ] [--num_eval_episodes NUM_EVAL_EPISODES]
+              [--optimizer {adam,amsgrad}] [--discount DISCOUNT]
+              [--num_steps MAX_NUM_STEPS]
+              [--num_steps_per_iter NUM_STEPS_PER_ITER]
+              [--mini_batch_size MINI_BATCH_SIZE] [--num_envs NUM_ENVS]
+              [--clip_ratio CLIP_RATIO] [--learning_rate LEARNING_RATE]
+              [--vf_coef VF_COEF] [--entropy_coef ENTROPY_COEF]
+              [--max_num_train_iters MAX_NUM_TRAIN_ITERS]
+              [--gradient_clip GRADIENT_CLIP] [--lam LAM]
+              [--target_kl TARGET_KL] [--log_level LOG_LEVEL] [--keep_models]
+              [--save_rollouts {none,train,eval,all}]
+
+Command line tool of MolGym
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --name NAME           experiment name
+  --seed SEED           run ID
+  --log_dir LOG_DIR     directory for log files
+  --model_dir MODEL_DIR
+                        directory for model files
+  --data_dir DATA_DIR   directory for saved rollouts
+  --results_dir RESULTS_DIR
+                        directory for results
+  --device {cpu,cuda}   select device
+  --canvas_size CANVAS_SIZE
+                        maximum number of atoms that can be placed on the
+                        canvas
+  --symbols SYMBOLS     chemical symbols available on canvas and in bag (comma
+                        separated)
+  --formulas FORMULAS   list of formulas for environment (comma separated)
+  --eval_formulas EVAL_FORMULAS
+                        list of formulas for environment (comma separated)
+                        used for evaluation
+  --bag_scale BAG_SCALE
+                        maximum bag size
+  --min_atomic_distance MIN_ATOMIC_DISTANCE
+                        minimum allowed atomic distance
+  --max_solo_distance MAX_SOLO_DISTANCE
+                        maximum distance hydrogen or halogens can be away from
+                        the nearest heavy atom
+  --min_reward MIN_REWARD
+                        minimum reward given by environment
+  --model {internal,covariant}
+                        model representation
+  --min_mean_distance MIN_MEAN_DISTANCE
+                        minimum mean distance
+  --max_mean_distance MAX_MEAN_DISTANCE
+                        maximum mean distance
+  --network_width NETWORK_WIDTH
+                        width of FC layers
+  --maxl MAXL           maximum L in spherical harmonics expansion
+  --num_cg_levels NUM_CG_LEVELS
+                        number of CG layers
+  --num_channels_hidden NUM_CHANNELS_HIDDEN
+                        number of channels in hidden layers
+  --num_channels_per_element NUM_CHANNELS_PER_ELEMENT
+                        number of channels per element
+  --num_gaussians NUM_GAUSSIANS
+                        number of Gaussians in GMM
+  --beta BETA           set beta parameter of spherical distribution
+  --load_latest         load latest checkpoint file
+  --load_model LOAD_MODEL
+                        load checkpoint file
+  --save_freq SAVE_FREQ
+                        save model every <n> iterations
+  --eval_freq EVAL_FREQ
+                        evaluate model every <n> iterations
+  --num_eval_episodes NUM_EVAL_EPISODES
+                        number of episodes per evaluation
+  --optimizer {adam,amsgrad}
+                        Optimizer for parameter optimization
+  --discount DISCOUNT   discount factor
+  --num_steps MAX_NUM_STEPS
+                        maximum number of steps
+  --num_steps_per_iter NUM_STEPS_PER_ITER
+                        number of optimization steps per iteration
+  --mini_batch_size MINI_BATCH_SIZE
+                        mini batch size for training
+  --num_envs NUM_ENVS   number of environment copies
+  --clip_ratio CLIP_RATIO
+                        PPO clip ratio
+  --learning_rate LEARNING_RATE
+                        Learning rate of Adam optimizer
+  --vf_coef VF_COEF     Coefficient for value function loss
+  --entropy_coef ENTROPY_COEF
+                        Coefficient for entropy loss
+  --max_num_train_iters MAX_NUM_TRAIN_ITERS
+                        Maximum number of training iterations
+  --gradient_clip GRADIENT_CLIP
+                        maximum norm of gradients
+  --lam LAM             Lambda for GAE-Lambda
+  --target_kl TARGET_KL
+                        KL divergence between new and old policies after an
+                        update for early stopping
+  --log_level LOG_LEVEL
+                        log level
+  --keep_models         keep all models
+  --save_rollouts {none,train,eval,all}
+                        which rollouts to save
